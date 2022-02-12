@@ -1,0 +1,8 @@
+mixin modal(title, button, textError, classError)
+  .popup.hide
+      .popupText
+        h2(class=classError)=title
+        .bar
+            block
+        button.button=button
+        .error=textError

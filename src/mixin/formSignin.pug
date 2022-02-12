@@ -1,0 +1,33 @@
+include ./inputSignin
+-
+    const arrayInputAuthorization = [
+        { placeholder: "Логин", name: "login" },
+        { placeholder: "Пароль", name: "password" }
+    ]
+-
+    const arrayInputRegistration = [
+        { placeholder: "Почта", name: "email" },
+        { placeholder: "Логин", name: "login" },
+        { placeholder: "Имя", name: "first_name" },
+        { placeholder: "Фамилия", name: "second_name" },
+        { placeholder: "Телефон", name: "phone" },
+        { placeholder: "Пароль", name: "password", type: "password" },
+        { placeholder: "Пароль (ещё раз)", name: "password2", type: "password" }
+    ]
+
+mixin form(name, button, onclick, linkName, link)
+    .form
+        h1.h1=name
+
+        if name == 'Регистрация'
+            each val in arrayInputRegistration
+                +inputSignin(val.placeholder, val.name, val.type)
+            .error Все поля обязательны для заполнения
+        else
+            each val in arrayInputAuthorization
+                +inputSignin(val.placeholder, val.name, val.type)
+            .error Неверный логин или пароль
+
+        .form_footer
+            button(class=`button ${onclick}`)=button
+            a(href=link).link=linkName

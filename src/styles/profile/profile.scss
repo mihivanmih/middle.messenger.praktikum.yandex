@@ -1,0 +1,153 @@
+.containerChat {
+  width: 100%;
+  display: flex;
+
+  & .back {
+    width: 64px;
+    height: 100vh;
+    background: #FBFBFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #EAEAEA;
+
+    & .arrowBackground {
+      width: 28px;
+      height: 28px;
+      background: #3369f3;
+      border-radius: 50px;
+
+      & .arrow {
+        width: 28px;
+        height: 28px;
+        background-image: url("../images/arrow.svg");
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-position: 7px 5px;
+      }
+    }
+
+
+  }
+
+  & .profile {
+    width: calc(100% - 64px);
+    height: 100vh;
+
+    & .profileCenter {
+      width: 510px;
+      margin: 60px auto 0;
+
+      & .avatar, & .avatarPassword {
+        width: 130px;
+        height: 130px;
+        background: #EFEFEF;
+        border-radius: 100px;
+        margin: 0 auto 20px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover .editAvatar{
+          display: flex;
+        }
+
+        & img {
+          max-width: 40px;
+        }
+
+        & .editAvatar {
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          position: absolute;
+          width: 130px;
+          height: 130px;
+          border-radius: 100px;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+          line-height: 14px;
+          display: none;
+          text-align: center;
+
+          & span {
+            max-width: 100px;
+          }
+
+        }
+
+      }
+
+      & .avatarPassword:hover .editAvatar{
+        display: none;
+      }
+
+      & .login {
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      & .data {
+
+        & .item {
+          width: 100%;
+          border-bottom: 1px solid #EAEAEA;
+          display: flex;
+          justify-content: space-between;
+          padding: 6px 0;
+          color: #1E1E1E;
+
+          & input {
+            text-align: right;
+            border: none;
+            background: none;
+            color: #999999;
+          }
+
+        }
+
+      }
+
+      & .link {
+        margin-top: 60px;
+
+        & a {
+          text-decoration: none;
+          padding: 10px 0;
+          border-bottom: 1px solid #EAEAEA;
+          color: #3369F3;
+          width: 100%;
+          display: block;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 13px;
+        }
+
+        & a:last-child {
+          border-bottom: none;
+          color: #FF0000;
+        }
+
+      }
+
+      & .save {
+        width: 280px;
+        height: 37px;
+        background: #3369F3;
+        border-radius: 8px;
+        margin: 60px auto 0;
+        border: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 13px;
+        display: block;
+        cursor: pointer;
+      }
+
+    }
+
+  }
+}
