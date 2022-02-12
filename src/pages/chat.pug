@@ -1,0 +1,14 @@
+extends ../../src/layouts/header
+block variables
+    - const pageTitle = 'Чат'
+block content
+    main.containerChat
+        .chatPeople
+            .chatProfile
+                 a(href='../pages/profile.pug').link Профиль >
+            .chatSearch
+        .messages
+            .header
+            .footer
+        script(src='../../src/main.js' type='module')
+block scripts

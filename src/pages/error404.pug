@@ -1,0 +1,11 @@
+extends ../../src/layouts/header
+block variables
+    - const pageTitle = 'Ошибка 404'
+block content
+    main.containerChat
+        .error
+            h1 404
+            h2 Не туда попали
+            a(href="./index.pug") Назад к чатам
+        script(src='../../src/main.js' type='module')
+block scripts

@@ -1,0 +1,49 @@
+extends ../../src/layouts/header
+
+block variables
+    - const pageTitle = 'Профиль'
+    -
+        const arrayInputProfile = [
+            { label: "Почта", value: "pochta@yandex.ru", name: "email", disabled: "disabled" },
+            { label: "Логин", value: "ivanivanov" , name: "login", disabled: "disabled" },
+            { label: "Имя", value: "Иван" , name: "first_name", disabled: "disabled" },
+            { label: "Фамилия", value: "Иван" , name: "second_name", disabled: "disabled" },
+            { label: "Имя в чате", value: "Иван" , name: "display_name", disabled: "disabled" },
+            { label: "Телефон", value: "+7 (909) 967 30 30" , name: "phone", disabled: "disabled" }
+        ]
+block content
+    main.containerChat
+        include ../../src/mixin/modal
+        +modal('Загрузите файл', 'Поменять', 'Нужно выбрать файл', 'error')
+          .inputFile
+            input#inputFile(name='avatar' type='file' multiple='')
+            label(for='inputFile').file
+              span Выбрать файл на компьютере
+
+
+        .back
+            .arrowBackground
+                a(href="./chat.pug")
+                    .arrow
+        .profile
+            .profileCenter
+                .avatar
+                    img(src="../../src/images/avatar.svg")
+                    .editAvatar
+                        span Поменять аватар
+                .displayName Иван
+
+                .data
+                    include ../mixin/inputProfile
+                    each val in arrayInputProfile
+                        +inputProfile(val.label, val.value, val.name, val.disabled)
+
+                .link
+                    a(href="./chat.pug").changeData  Изменить данные
+                    a(href="./password.pug") Изменить пароль
+                    a(href="./index.pug") Выйти
+
+                button.hide.save Сохранить
+
+        script(src='../../src/main.js' type='module')
+block scripts

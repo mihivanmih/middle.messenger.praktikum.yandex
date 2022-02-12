@@ -1,0 +1,10 @@
+extends layouts/header
+block variables
+    - const pageTitle = 'Авторизация'
+block content
+    main.container
+        include mixin/formSignin
+        +form('Вход', 'Авторизоваться', 'signin', 'Нет аккаунта?', 'registration')
+        //+form('Регистрация', 'Зарегистрироваться', 'onclick', 'Войти', '')
+        script(src='./main.js' type='module')
+block scripts

@@ -1,0 +1,9 @@
+extends ../../src/layouts/header
+block variables
+    - const pageTitle = 'Регистрация'
+block content
+    main.container
+        include ../../src/mixin/formSignin
+        +form('Регистрация', 'Зарегистрироваться', 'registration', 'Войти', '../pages/index.pug')
+        script(src='../../src/main.js' type='module')
+block scripts
